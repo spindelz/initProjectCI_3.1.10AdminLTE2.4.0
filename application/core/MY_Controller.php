@@ -6,7 +6,7 @@ class MY_Controller extends CI_Controller{
         parent::__construct();
 
         $this->load->helper(array('url'));
-        $this->load->library('component');
+        
         // $this->load->library('encrypt');
 
         define('SITE',site_url());
@@ -30,6 +30,7 @@ class MY_Controller extends CI_Controller{
 
                 $view["assets_js"] = !is_null($assets_js) ? $this->js_asset($assets_js) : '';
 
+                $this->load->view('template/footer');
                 $this->load->view('template/foot');
                 break;
             case 'blank_page':
